@@ -1,0 +1,108 @@
+:root {
+
+  --sidebar-width: 250px;
+  --navbar-height: 60px; /* Standard desktop navbar height */
+  --navbar-height-mobile: 50px; /* Slightly shorter navbar height for mobile */
+}
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  width: 100%;
+}
+
+
+/* =================================================================== */
+
+
+/* frontend/src/assets/styles/App.css */
+
+/* Overall App Container - Stacks Navbar on top of the dashboard layout */
+.app-container {
+  display: flex;
+  flex-direction: column; /* Stacks children vertically: Navbar, then dashboard-layout-wrapper */
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* This new wrapper holds the sidebar and main content side-by-side, pushed below the fixed Navbar */
+.dashboard-layout-wrapper {
+  display: flex; /* Arranges sidebar and main-content horizontally */
+  flex-grow: 1; /* Allows this wrapper to take up remaining vertical space */
+  margin-top: var(--navbar-height); /* <--- CRUCIAL: Pushes content down by navbar's height */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Sidebar positioning: also fixed below the navbar */
+.sidebar {
+  position: fixed;
+  top: var(--navbar-height); /* <--- CRUCIAL: Starts below the Navbar */
+  /* ... rest of sidebar styles ... */
+  height: calc(100vh - var(--navbar-height)); /* Fills remaining height below Navbar */
+}
+
+/* Main Content Area - Next to the sidebar */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  /* ... other styles ... */
+  height: calc(100vh - var(--navbar-height)); /* Fills remaining height below Navbar */
+  margin-left: var(--sidebar-width); /* Default: shifted to the right of the sidebar on desktop */
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 767.98px) {
+  .dashboard-layout-wrapper {
+    margin-top: var(--navbar-height-mobile); /* Adjust for smaller mobile navbar height */
+  }
+
+  .sidebar {
+    top: 0; /* On mobile, sidebar can span full height */
+    height: 100vh; /* Takes full viewport height */
+  }
+
+  .main-content {
+    height: calc(100vh - var(--navbar-height-mobile)); /* Adjust height for mobile navbar */
+  }
+}
+
+
+/* ====================================================================== */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  margin: 0 100px 0 100px;
+  transition: margin-left 0.3s ease;
+}
+
+.error-message-dashboard {
+  color: #d32f2f;
+  background-color: #ffebee;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* For screens smaller than 992px (e.g., tablets and mobile) */
+@media (max-width: 991.98px) {
+  .main-content {
+    margin-left: 0; /* Sidebar will overlay */
+    width: 100%; /* Main content takes full width */
+  }
+}
+
+/* Further fine-tuning for smaller screens */
+@media (max-width: 767.98px) {
+  .main-content {
+    padding: 15px; /* Reduce padding on smaller screens */
+  }
+}
+
+@media (max-width: 479.98px) {
+  .main-content {
+    padding: 10px; /* Even less padding for very small screens */
+  }
+}

@@ -1,0 +1,44 @@
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  width: 100%;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  margin: 0 100px 0 100px;
+  transition: margin-left 0.3s ease;
+}
+
+.error-message-dashboard {
+  color: #d32f2f;
+  background-color: #ffebee;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* For screens smaller than 992px (e.g., tablets and mobile) */
+@media (max-width: 991.98px) {
+  .main-content {
+    margin-left: 0; /* Sidebar will overlay */
+    width: 100%; /* Main content takes full width */
+  }
+}
+
+/* Further fine-tuning for smaller screens */
+@media (max-width: 767.98px) {
+  .main-content {
+    padding: 15px; /* Reduce padding on smaller screens */
+  }
+}
+
+@media (max-width: 479.98px) {
+  .main-content {
+    padding: 10px; /* Even less padding for very small screens */
+  }
+}

@@ -1,0 +1,122 @@
+/* --- Global Body & Base Styles --- */
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* More attractive background gradient */
+    background: linear-gradient(135deg, var(--background-color-light) 0%, var(--background-color-dark) 100%);
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /* Modern font */
+}
+
+.login-container {
+    background-color: var(--card-bg-color);
+    padding: 45px 40px; /* Increased padding */
+    border-radius: 12px; /* Slightly larger border-radius */
+    box-shadow: var(--shadow-elevation-large); /* Stronger, more attractive shadow */
+    width: 100%;
+    max-width: 520px; /* Slightly wider */
+    text-align: center;
+    box-sizing: border-box;
+    position: relative; /* For potential future animations/elements */
+    overflow: hidden; /* Ensure shadow/border radius clip correctly */
+}
+
+.login-title {
+    color: var(--primary-color);
+    margin-bottom: 35px; /* Increased margin */
+    font-size: 2.5em; /* Larger title */
+    font-weight: 700; /* Bolder title */
+    letter-spacing: -0.02em; /* Tighter letter spacing */
+}
+
+.login-form .form-group {
+    margin-bottom: 25px; /* Increased margin */
+    text-align: left;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 10px; /* Increased margin */
+    color: var(--text-color-dark); /* Darker text for labels */
+    font-size: 1em; /* Slightly larger label font */
+    font-weight: 600; /* Bolder labels */
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 14px 18px; /* More padding */
+    border: 1px solid var(--border-color-light); /* Lighter border */
+    border-radius: 8px; /* Slightly larger border-radius for inputs */
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+    font-size: 1.05em; /* Slightly larger input text */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.25); /* More pronounced focus shadow */
+}
+
+/* Enhanced Login Button Styles */
+.login-button {
+    width: 100%;
+    padding: 15px; /* More padding */
+    background: linear-gradient(45deg, var(--primary-color) 0%, var(--primary-dark-color) 100%); /* Gradient background */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Consistent border-radius */
+    font-size: 1.2em; /* Larger font */
+    font-weight: 700; /* Bolder font */
+    cursor: pointer;
+    box-shadow: var(--shadow-elevation-low); /* Subtle button shadow */
+    transition: all 0.3s ease; /* Smooth transitions for hover effects */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase; /* Uppercase text */
+}
+
+.login-button:hover {
+    background: linear-gradient(45deg, var(--primary-dark-color) 0%, var(--primary-color) 100%); /* Reverse gradient on hover */
+    box-shadow: var(--shadow-elevation-medium); /* More pronounced shadow on hover */
+    transform: translateY(-3px); /* Lift button on hover */
+}
+
+.login-button:active {
+    transform: translateY(0); /* Press down effect */
+    box-shadow: none;
+}
+
+.error-message {
+    color: var(--danger-color); /* Defined in App.css */
+    background-color: rgba(var(--danger-rgb), 0.1); /* Light red background */
+    border-left: 5px solid var(--danger-color); /* Red left border */
+    padding: 10px 15px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    border-radius: 6px;
+    font-size: 0.95em;
+    font-weight: 500;
+    text-align: left;
+}
+
+.dummy-credentials {
+    margin-top: 30px; /* Increased margin */
+    font-size: 0.9em; /* Slightly larger font */
+    color: var(--text-color-light);
+}
+
+.dummy-credentials strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}

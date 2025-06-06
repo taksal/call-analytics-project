@@ -1,0 +1,99 @@
+:root {
+  --primary-color: #4A90E2; /* A slightly softer, modern blue */
+  --primary-dark-color: #2F6DB6; /* Darker shade for gradients */
+  --primary-light-color: #EBF4FF; /* Very light blue */
+  --text-color: #333; /* Dark grey for main text */
+  --text-color-light: #6c757d; /* Lighter grey for secondary text */
+  --text-color-dark: #212529; /* Even darker for important text/labels */
+
+  /* Backgrounds */
+  --background-color: #f8f9fa;
+  --background-color-light: #EBF4FF; /* Lighter blue for gradient start */
+  --background-color-dark: #D6E4FF; /* Darker blue for gradient end */
+  --card-bg-color: #ffffff; /* White card background */
+  --input-bg-color: #f8f9fa; /* Input background */
+
+  /* Borders & Shadows */
+  --border-color: #dee2e6;
+  --border-color-light: #e9ecef;
+  --border-radius: 12px; /* Consistent rounded corners */
+
+  --shadow-elevation-low: 0 2px 5px rgba(0, 0, 0, 0.05);
+  --shadow-elevation-medium: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --shadow-elevation-large: 0 10px 30px rgba(0, 0, 0, 0.18); /* More prominent shadow */
+
+  /* Status Colors (for error messages) */
+  --danger-color: #E74C3C; /* Vibrant Red */
+  --danger-rgb: 231, 76, 60;
+
+/* ============================================= */
+
+  --navbar-height: 360px; /* Standard desktop navbar height */
+  --navbar-height-mobile: 50px; /* Slightly shorter navbar height for mobile */
+}
+
+/* * A modern CSS Reset to ensure consistent rendering across browsers.
+ * This helps prevent unexpected padding/margins from browser defaults.
+ */
+ *,
+ *::before,
+ *::after {
+   box-sizing: border-box; /* Crucial for responsive design! */
+   margin: 0;
+   padding: 0;
+ }
+ 
+ /* Remove default margin from body */
+ body {
+   margin: 0;
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+     sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   line-height: 1.5; /* Good default for readability */
+   background-color: #f0f2f5; /* Consistent background color */
+   overflow-x: hidden; /* Prevent horizontal scroll for the entire page */
+ }
+ 
+ /* Ensure images and media scale within their containers */
+ img,
+ picture,
+ video,
+ canvas,
+ svg {
+   display: block;
+   max-width: 100%;
+   height: auto; /* Maintain aspect ratio */
+ }
+ 
+ /* Remove built-in form element styling, allowing for custom styling */
+ input,
+ button,
+ textarea,
+ select {
+   font: inherit; /* Inherit font from body */
+ }
+ 
+ /* Avoid text overflows */
+ p,
+ h1, h2, h3, h4, h5, h6 {
+   overflow-wrap: break-word; /* Prevents long words from overflowing */
+ }
+ 
+ /* Set root font size for rem units */
+ html {
+   font-size: 16px; /* Base for rem units. Can be adjusted in media queries. */
+ }
+ 
+ /* --- Accessibility Focus --- */
+ @media (prefers-reduced-motion: reduce) {
+   *,
+   *::before,
+   *::after {
+     animation-duration: 0.01ms !important;
+     animation-iteration-count: 1 !important;
+     transition-duration: 0.01ms !important;
+     scroll-behavior: auto !important;
+   }
+ }

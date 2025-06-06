@@ -1,0 +1,120 @@
+/* src/assets/styles/Popup.css */
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto; /* Allow vertical scroll if popup content is too long */
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 90%; /* Start with a percentage width */
+  max-width: 600px; /* Default max-width for larger screens */
+  animation: slideInFromTop 0.4s ease-out forwards;
+  position: relative; /* For z-index context if needed */
+  /* Remove fixed height if any to allow content to dictate height */
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.popup-header h3 {
+  font-size: 1.8em;
+  color: #333;
+  font-weight: 600;
+}
+
+.popup-close-button {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  color: #777;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+.popup-close-button:hover {
+  color: #333;
+}
+
+.popup-body p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.popup-body p strong {
+  color: #333;
+}
+
+.call-details-popup-content .status-answered {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.call-details-popup-content .status-failed {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* --- Responsive adjustments for Popup --- */
+
+/* For screens smaller than 768px */
+@media (max-width: 767.98px) {
+  .popup-content {
+    width: 95%; /* Make it take up more width on smaller screens */
+    padding: 20px;
+  }
+  .popup-header h3 {
+    font-size: 1.5em;
+  }
+  .popup-close-button {
+    font-size: 1.3em;
+  }
+  .popup-body p {
+    font-size: 0.9em;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 479.98px) {
+  .popup-content {
+    padding: 15px;
+    width: 98%; /* Even wider to fit on tiny screens */
+  }
+  .popup-header h3 {
+    font-size: 1.3em;
+  }
+  .popup-body p {
+    font-size: 0.85em;
+  }
+}

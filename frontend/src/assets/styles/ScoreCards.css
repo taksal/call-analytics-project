@@ -1,0 +1,83 @@
+/* src/assets/styles/ScoreCards.css */
+
+.scorecards-container {
+  grid-column: 1 / -1; /* Span full width within the dashboard grid */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjusted minmax for better scaling */
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.scorecard {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 0; /* Allow scorecard to shrink below its min-content size in the grid */
+}
+
+.scorecard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.scorecard h3 {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.scorecard .score {
+  font-size: 2.8em;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* --- Responsive adjustments for Score Cards --- */
+
+/* For screens smaller than 992px */
+@media (max-width: 991.98px) {
+  .scorecards-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* More columns on tablets */
+    gap: 15px;
+  }
+  .scorecard {
+    padding: 20px;
+  }
+  .scorecard h3 {
+    font-size: 1.1em;
+  }
+  .scorecard .score {
+    font-size: 2.4em;
+  }
+}
+
+/* For screens smaller than 768px (most tablets and mobile landscape) */
+@media (max-width: 767.98px) {
+  .scorecards-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Allow even more columns if space */
+    gap: 10px;
+  }
+  .scorecard {
+    padding: 15px;
+  }
+  .scorecard h3 {
+    font-size: 1em;
+  }
+  .scorecard .score {
+    font-size: 2em;
+  }
+}
+
+/* For very small screens (mobile portrait) */
+@media (max-width: 479.98px) {
+  .scorecards-container {
+    grid-template-columns: 1fr; /* Stack scorecards vertically */
+    gap: 15px;
+  }
+  .scorecard {
+    padding: 20px; /* Return to slightly larger padding when stacked */
+  }
+}

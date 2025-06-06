@@ -1,0 +1,79 @@
+src/assets/styles/Header.css
+
+.top-header {
+    background-color: #ffffff; /* White background for the header */
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space out logo and hamburger */
+    position: fixed; /* Make it stick to the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 900; /* Below sidebar (1000) but above main content */
+    height: 60px; /* Fixed height for the header */
+  }
+  
+  .header-logo {
+    height: 40px; /* Adjust logo height as needed */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure image fits without cropping */
+  }
+  
+  /* Specific styling for the hamburger icon when it's inside the header */
+  .top-header .hamburger-icon {
+    position: static; /* Reset from fixed, as it's now inside the header */
+    top: auto;
+    left: auto;
+    margin-left: 20px; /* Space between logo and icon if desired */
+    background-color: #3498db; /* Blue color for the hamburger icon */
+    color: white;
+    padding: 8px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: none; /* Remove extra shadow as header has one */
+    display: none; /* Hidden by default for larger screens, shown via media query */
+  }
+  
+  .top-header .hamburger-icon:hover {
+    background-color: #2980b9;
+  }
+  
+  /* --- Responsive Adjustments for Header --- */
+  
+  /* For screens larger than 991.98px (desktop): Hide hamburger, adjust logo positioning */
+  @media (min-width: 992px) {
+    .top-header {
+      /* Adjust left padding to align with main content when sidebar is open */
+      padding-left: calc(20px + 250px); /* Base padding + sidebar width */
+      justify-content: flex-start; /* Push logo to left */
+    }
+    .top-header .hamburger-icon {
+      display: none; /* Ensure hamburger is hidden on desktop */
+    }
+  }
+  
+  /* For screens smaller than 992px (tablets/mobile): Show hamburger, logo on left */
+  @media (max-width: 991.98px) {
+    .top-header {
+      justify-content: space-between; /* Space out logo and hamburger */
+    }
+    .top-header .hamburger-icon {
+      display: block; /* Show hamburger icon */
+    }
+  }
+  
+  /* Adjustments for very small screens */
+  @media (max-width: 479.98px) {
+    .top-header {
+      padding: 10px 15px; /* Smaller padding */
+      height: 50px; /* Slightly smaller height */
+    }
+    .header-logo {
+      height: 35px; /* Smaller logo */
+    }
+    .top-header .hamburger-icon {
+      padding: 6px 8px; /* Smaller icon padding */
+    }
+  }

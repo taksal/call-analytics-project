@@ -1,0 +1,97 @@
+/* src/assets/styles/Navbar.css */
+
+.navbar {
+  background-color: #ffffff;
+  padding: 15px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+
+
+/* ================================================ */
+
+
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw; /* Crucial for end-to-end */
+   /* z-index: 1001; Must be high enough */
+   
+}
+
+.navbar-brand {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #333;
+}
+
+.navbar-logo {
+  height: auto; /* Allow height to adjust based on width or max-height */
+  width: auto; /* Maintain aspect ratio */
+  max-height: 40px; /* Set a fixed maximum height for the logo on larger screens */
+  max-width: 100%; /* Ensure the logo doesn't overflow its horizontal container */
+  margin-right: 15px; /* Space between logo and any potential title/elements */
+  border-radius: 4px; /* Optional: subtle rounded corners for logo */
+}
+
+.navbar-user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-user-info span {
+  font-size: 1em;
+  color: #555;
+}
+
+.navbar-user-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 0.9em;
+  flex-shrink: 0; /* Prevent avatar from shrinking */
+}
+
+/* --- Responsive adjustments for Navbar --- */
+
+@media (max-width: 767.98px) {
+  .navbar {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start;
+    padding: 10px 15px;
+  }
+
+  .navbar-brand {
+    font-size: 1.4em;
+    margin-bottom: 10px; /* Add space between brand and user info */
+    width: 100%; /* Ensure brand takes full width */
+    text-align: center; /* Center brand for better look */
+  }
+
+  .navbar-user-info {
+    font-size: 0.9em;
+    width: 100%; /* Ensure user info takes full width */
+    justify-content: center; /* Center user info */
+  }
+}
+
+@media (max-width: 479.98px) {
+  .navbar-brand {
+    font-size: 1.2em;
+  }
+  .navbar-user-info {
+    flex-direction: column; /* Stack name and avatar on very small screens */
+    gap: 5px;
+  }
+}

@@ -1,0 +1,51 @@
+/* src/assets/styles/Charts.css */
+
+.chart-container {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 350px;
+  /* Importantly, no fixed width or flex-basis here. Let the parent grid/flex control it. */
+  min-width: 0; /* Allow chart container to shrink if needed */
+}
+
+/* Specific styling for pie and trend graph for potential differences */
+.pie-chart {
+  /* Add any specific styles for pie chart here if needed */
+}
+
+.trend-graph {
+  /* Add any specific styles for trend graph here if needed */
+  background-color: #fff;
+  margin-top: 0px;
+}
+
+/* --- Responsive adjustments for Charts --- */
+
+/* For screens smaller than 1200px */
+@media (max-width: 1199.98px) {
+  .chart-container {
+    min-height: 300px;
+    padding: 20px;
+  }
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 767.98px) {
+  .chart-container {
+    padding: 15px;
+    min-height: 280px;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 479.98px) {
+  .chart-container {
+    padding: 10px;
+    min-height: 250px;
+  }
+}
