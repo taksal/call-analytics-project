@@ -64,7 +64,7 @@
 }
 .hamburger-icon {
   position: fixed;
-  top: 20px;
+  top: 5px;
   left: 20px;
   z-index: 1001; /* Above sidebar to click */
   background-color: #3498db;

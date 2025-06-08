@@ -37,7 +37,8 @@ function Navbar({ onLogout }) {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <span className="navbar-title">Call Analytics</span>
+        {/* <span className="navbar-title">Call Analytics</span> */}
+        <img src="\logo.png" alt="Company Logo" className="navbar-logo" />
       </div>
       <div className="navbar-right">
         {/* User Profile Icon and Dropdown Container */}

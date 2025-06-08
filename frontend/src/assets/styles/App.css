@@ -1,35 +1,88 @@
 /* Style the navbar */
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #f8f9fa; /* Adjust color as needed */
-  padding: 1rem 0; /* Vertical padding for spacing inside navbar */
-  z-index: 1000; /* Ensure it stays on top */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for distinction */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Adjust the main content to account for fixed navbar */
+/* Style the collapsible menu */
+.menu {
+    position: fixed;
+    top: 60px; /* Below navbar, adjust based on navbar height */
+    left: -250px; /* Start off-screen, adjust width as needed */
+    width: 250px;
+    height: calc(100% - 60px); /* Full height minus navbar */
+    background-color: #fff;
+    transition: left 0.3s ease; /* Smooth slide effect */
+    z-index: 1100; /* Above main content */
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Show menu when open */
+.menu-open .menu {
+    left: 0; /* Slide in when menu-open class is added */
+}
+
+/* Overlay for background when menu is open */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+}
+
+.menu-open .menu-overlay {
+    display: block; /* Show overlay when menu is open */
+}
+
+/* Adjust main content to accommodate menu */
 .main-content {
-  margin-top: 80px; /* Adjust this value to match or exceed the navbar height + padding */
-  padding: 20px; /* Add padding inside the content area */
+    margin-top: 80px; /* Offset for navbar */
+    margin-left: 0; /* Default no margin when menu is closed */
+    padding: 20px;
+    transition: margin-left 0.3s ease; /* Smooth transition */
+    min-height: calc(100vh - 80px); /* Ensure content takes full height */
 }
 
-/* Style the number cards (if not already defined) */
+/* Shift main content when menu is open */
+.menu-open .main-content {
+    margin-left: 250px; /* Match menu width to avoid overlap */
+}
+
+/* Style the number cards */
 .card {
-  display: inline-block;
-  margin: 10px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 200px; /* Adjust width as needed */
+    display: inline-block;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
 }
 
-/* Ensure the body has no default margin interfering */
+/* Ensure body has no default margin */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif; /* Consistent font */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .menu {
+        width: 200px;
+        left: -200px;
+    }
+    .menu-open .main-content {
+        margin-left: 200px;
+    }
 }
